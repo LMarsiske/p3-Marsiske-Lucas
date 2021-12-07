@@ -81,10 +81,31 @@ section nav a {
     sans-serif;
   color: #232b2b;
   text-decoration: none;
+  position: relative;
+  transform: perspective(1px) translateZ(0);
 }
 
-section nav a:hover {
-  border-bottom: 1px solid #580dba;
+section nav a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #580dba;
+  height: 2px;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+section nav a:hover:before,
+section nav a:focus:before,
+section nav a:active:before {
+  right: 0;
 }
 
 section ul {

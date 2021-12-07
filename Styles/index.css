@@ -4,6 +4,10 @@
   border: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #fffafa;
   display: flex;
@@ -77,6 +81,10 @@ section nav a {
     sans-serif;
   color: #232b2b;
   text-decoration: none;
+}
+
+section nav a:hover {
+  border-bottom: 1px solid #580dba;
 }
 
 section ul {
@@ -153,12 +161,8 @@ main {
 }
 
 #page2 {
-  background: rgb(88, 13, 186);
-  background: linear-gradient(
-    180deg,
-    rgba(88, 13, 186, 1) 25%,
-    rgba(255, 250, 250, 1) 25%
-  );
+  background: #580dba;
+  background: linear-gradient(180deg, #580dba 25%, #fffafa 25%);
 }
 
 #page2 p {
@@ -171,4 +175,79 @@ main {
 
 #page2 #second_paragraph {
   margin: 25px 0 0 0;
+}
+
+#page3 {
+  background: #f7567c;
+  background: linear-gradient(180deg, #f7567c 13%, #fffafa 13%);
+}
+
+#skills_table {
+  width: 67%;
+  border: 3px solid #232b2b;
+  border-radius: 25px;
+  margin: 50px auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+#skills_table h3 {
+  font: normal 500 calc(24px + (36 - 24) * ((100vw - 900px) / (1440 -900)))
+      "Futura PT",
+    sans-serif;
+  color: #232b2b;
+}
+
+#skills_table p {
+  font: normal 400 calc(16px + (24 - 16) * ((100vw - 900px) / (1440 -900)))
+      "Futura PT",
+    sans-serif;
+  color: #232b2b;
+}
+
+.half_table {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: baseline;
+  padding: 40px 10px;
+}
+
+.table_subheader {
+  width: 80%;
+  text-align: center;
+  font: normal 500 calc(20px + (30 - 20) * ((100vw - 900px) / (1440 -900)))
+      "Futura PT",
+    sans-serif;
+  border-bottom: 1px solid #f7567c;
+}
+
+.half_table h3 {
+  margin: 10px 0 0 0;
+}
+
+.half_table ul {
+  list-style-type: none;
+}
+
+.half_table li {
+  font: normal 400 calc(16px + (24 - 16) * ((100vw - 900px) / (1440 -900)))
+      "Futura PT",
+    sans-serif;
+  color: #232b2b;
+  margin: 20px 0;
+}
+
+#design p {
+  width: 80%;
+  margin: 40px 0 32px 0;
+}
+
+#design .table_subheader {
+  margin: 40px 0 0 0;
+}
+
+#development .table_subheader {
+  margin: 40px 0 0 0;
 }

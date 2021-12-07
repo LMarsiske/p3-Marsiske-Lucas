@@ -4,6 +4,100 @@
   border: 0;
 }
 
-p {
-  font: 24px "Futura PT", sans-serif;
+body {
+  background-color: #fffafa;
+  display: flex;
+}
+
+section {
+  width: 20%;
+  height: 100vh;
+  box-shadow: 5px 0 5px 0 rgba(0, 0, 0, 0.24);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#container {
+  position: relative;
+  width: 50%;
+  margin: 10% 0 0 0;
+}
+
+#container::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+#container img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; /* Make the picture taking the size of it's parent */
+  width: 100%; /* This if for the object-fit */
+  height: 100%; /* This if for the object-fit */
+  object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
+  object-position: center;
+}
+
+section h2 {
+  font: normal 400 calc(16px + (36 - 16) * ((25vw) / (800 - 400))) "Futura PT",
+    sans-serif;
+  color: #232b2b;
+  margin: 5% 0 0 0;
+  text-align: center;
+}
+
+section p {
+  font: normal 400 calc(12px + (24 - 12) * ((25vw) / (800 - 400))) "Futura PT",
+    sans-serif;
+  color: #232b2b;
+  margin: 2% 0 0 0;
+  text-align: center;
+}
+
+section nav {
+  width: 50%;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 30% 0 0 0;
+}
+
+section nav a {
+  font: normal 400 calc(12px + (24 - 12) * ((25vw) / (800 - 400))) "Futura PT",
+    sans-serif;
+  color: #232b2b;
+  text-decoration: none;
+}
+
+section ul {
+  list-style: none;
+  margin: 50% 0 0 0;
+}
+
+section ul a {
+  text-decoration: none;
+}
+
+.section_link {
+  display: flex;
+  margin: 7% 0;
+  align-items: center;
+}
+
+.section_link p {
+  font: normal 400 calc(8px + (16 - 8) * ((25vw) / (800 - 400))) "Futura PT",
+    sans-serif;
+  color: #232b2b;
+  text-decoration: none;
+  margin: 0 0 0 8px;
+}
+
+main {
+  width: 80%;
+  background-color: blueviolet;
 }

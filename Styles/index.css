@@ -24,19 +24,19 @@ section {
   align-items: center;
 }
 
-#container {
+#avatar_container {
   position: relative;
   width: 50%;
   margin: 10% 0 0 0;
 }
 
-#container::after {
+#avatar_container::after {
   content: "";
   display: block;
   padding-bottom: 100%;
 }
 
-#container img {
+#avatar_container img {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -271,4 +271,79 @@ main {
 
 #development .table_subheader {
   margin: 40px 0 0 0;
+}
+
+#page4 {
+  background: #1c3a6b;
+  background: linear-gradient(180deg, #1c3a6b 29%, #fffafa 29%);
+}
+
+#container {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  margin: 50px 0 0 0;
+}
+
+#text {
+  width: calc(50% - 100px);
+}
+
+#text h3 {
+  font: normal 500 calc(20px + (30 - 20) * ((100vw - 900px) / (1440 -900)))
+      "Futura PT",
+    sans-serif;
+  color: #232b2b;
+}
+
+#text p {
+  font: normal 400 calc(16px + (24 - 16) * ((100vw - 900px) / (1440 -900)))
+      "Futura PT",
+    sans-serif;
+  color: #232b2b;
+  margin: 25px 0 0 25px;
+}
+
+#hover_container {
+  margin: 0 auto;
+  position: relative;
+}
+
+#page4 img {
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.24);
+  display: block;
+  width: 100%;
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #000;
+  border-radius: 15px;
+}
+
+#hover_container:hover #overlay {
+  opacity: 0.85;
+}
+
+#overlay_text {
+  color: #fffafa;
+  font: normal 400 calc(24px + (36 - 24) * ((100vw - 900px) / (1440 -900)))
+      "Futura PT",
+    sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }

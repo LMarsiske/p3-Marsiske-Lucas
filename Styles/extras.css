@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fffafa;
+  width: 100%;
+}
+
+header {
+  height: 5vh;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  width: 100%;
+  background-color: #fffafa;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5vh;
+  box-shadow: 0 -5px 5px 0 rgba(0, 0, 0, 0.24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fffafa;
+}
+
+main {
+  width: 100%;
+  padding: 5vh 0 10vh 0;
+}
+
+h2 {
+  font: normal 400 calc(16px + (36 - 16) * ((100vw - 900px) / (1440 -900)))
+      "Futura PT",
+    sans-serif;
+  color: #232b2b;
+}
+
+p,
+a {
+  font: normal 400 calc(16px + (24 - 16) * ((100vw - 900px) / (1440 -900)))
+      "Futura PT",
+    sans-serif;
+  color: #232b2b;
+  text-decoration: none;
+}
+
+span {
+  margin: 0 0 0 10px;
+}
+
+.paper {
+  margin: 2.5% 0 0 5%;
+  width: 40%;
+  min-width: 600px;
+  border-radius: 15px;
+  box-shadow: -5px 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding: 2.5%;
+}
+
+.form_row {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5% 0;
+}
+
+label {
+  font: normal 400 calc(16px + (24 - 16) * ((100vw - 900px) / (1440 -900)))
+      "Futura PT",
+    sans-serif;
+  color: #232b2b;
+}
+
+input:focus {
+  outline: 2px solid #580dba;
+}
+
+input::placeholder {
+  font: normal 500 16px "Futura PT", sans-serif;
+  color: black;
+}
+
+#submit {
+  font: normal 400 calc(16px + (24 - 16) * ((100vw - 900px) / (1440 -900)))
+      "Futura PT",
+    sans-serif;
+  width: fit-content;
+  margin: 2% auto;
+  padding: 3% 5%;
+  border-radius: 10px;
+  color: #fffafa;
+  background-color: #580dba;
+}
+
+.gallery {
+  width: 250px;
+}
+
+#animatethis {
+  width: 400px;
+  height: 400px;
+  border-radius: 5%;
+  animation: colorChange 5s infinite;
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: #580dba;
+  }
+  25% {
+    background-color: #1c3a6b;
+  }
+  50% {
+    background-color: #f7567c;
+  }
+  75% {
+    background-color: #1c3a6b;
+  }
+  100% {
+    background-color: #580dba;
+  }
+}

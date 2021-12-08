@@ -2,9 +2,64 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+
+        <link rel="stylesheet" type="text/css" href="Styles/extras.css"/>
+
+        <link rel="stylesheet" type="text/css" href="lightbox/dist/css/lightbox.min.css"/>
+        
         <title>Extras</title>
     </head>
     <body>
-        
+        <header>
+            <nav>
+                <a href="index.html">&#129044;<span>Back to home</span></a>
+            </nav>
+        </header>
+        <main>
+            <section id="form" class="paper">
+                <h2>This fulfills the form requirement</h2>
+                <p>Please fill out the form and someone will be in contact with you shortly.</p>
+                <form class="contact_form" id="test_form" name="test_form" method="" action="form.php" onsubmit="return validateForm(this)">
+                    <div class="form_row">
+                        <label>First Name</label>
+                        <input type="text" name="req_firstName" placeholder="ex. John"/>
+                    </div>
+                    <div class="form_row">
+                        <label>Last Name</label>
+                        <input type="text" name="req_lastName" placeholder="ex. Smith"/>
+                    </div>
+                    <div class="form_row">
+                        <label>Phone #</label>
+                        <input type="tel" name="phone" placeholder="(123) 456-7890" />
+                    </div>
+                    <div class="form_row">
+                        <label>Email</label>
+                        <input type="email" name="contact_email" placeholder="example@email.com"/>
+                    </div>
+                    <input id="submit" type="submit" value="Submit"/>
+                </form>
+            </section>
+            <section id="lightbox" class="paper">
+                <h2>This fulfills the Lightbox requirement</h2>
+                <a href="images/sunrise.jpg" data-lightbox="lightbox" data-title="My caption">
+                    <img src="images/sunrise.jpg" alt="Picture of a sunrise" title="sunrise"  width= "250px" height="250px" class="gallery"/>
+                </a>
+                <a href="images/sunset.jpg" data-lightbox="lightbox" data-title="Image of a sunset">
+                    <img src="images/sunset.jpg" 
+                    alt="Picture of a sunset" title="sunset" width= "250px" height="250px" class="gallery"/>
+                </a>
+                <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg" data-lightbox="example-1"><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg" alt="image-1" /></a>
+            </section>
+            <section id="animation" class="paper">
+                <h2>This fulfills the animation requirement</h2>
+                <div id="animatethis"></div>
+            </section>
+        </main>
+        <footer>
+            <p>
+                This is a footer
+            </p>
+        </footer>
+        <script src="lightbox/dist/js/lightbox-plus-jquery.min.js"></script>
     </body>
 </html>

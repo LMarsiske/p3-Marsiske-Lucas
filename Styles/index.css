@@ -194,6 +194,8 @@ main {
 /* Selectively underlines only a portion of the text */
 #underline {
   border-bottom: 3px solid #580dba;
+  display: inline-block;
+  line-height: 0.75em;
 }
 
 /* Ensure that the hero image is always at the bottom of the screen, centered in the section when you are scrolled all the way up to the top */

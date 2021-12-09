@@ -309,12 +309,7 @@ main {
 */
 #design p {
   width: 80%;
-  margin: 48px 0 0 0;
-}
-
-/* Needed extra top margin on the right side "Tools" subheader to keep the two lined up */
-#more_margin {
-  margin: 55px 0 0 0;
+  margin: 48px 0 19px 0;
 }
 
 /* Last time with the gradient trick, this time in navy */

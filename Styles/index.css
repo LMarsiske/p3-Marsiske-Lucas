@@ -278,7 +278,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: baseline;
   padding: 40px 10px;
 }
 
@@ -305,11 +304,15 @@ main {
 
 /* 
   <p> tag in the #design half takes up 80% of width to match the pink underlines.
-  Top and bottom margins were used to make the top line up with "Languages" next to it and to make the two "Tools" subheaders line up with each other
 */
 #design p {
   width: 80%;
-  margin: 48px 0 20px 0;
+  margin: 48px 0 0 0;
+}
+
+/* Needed extra top margin on the right side "Tools" subheader to keep the two lined up */
+#more_margin {
+  margin: 55px 0 0 0;
 }
 
 /* Last time with the gradient trick, this time in navy */

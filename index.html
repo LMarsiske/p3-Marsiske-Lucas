@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
         <link rel="shortcut icon" href="images/favicon.ico"/>
+
         <link rel="stylesheet" href="https://use.typekit.net/ggp5jch.css">
         <link rel="stylesheet" type="text/css" href="Styles/index.css">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-R9ZXBTR1QB"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-R9ZXBTR1QB');
+        </script>
+
+        <!-- SEO -->
+        <meta charset="UTF-8">
+        <meta name="keywords" content="web develop developer design designer react node js javascript html css"/>
+        <meta name="description" content="Hi, I'm Lucas. Nice to meet you. I'm a web developer and designer focused on React.js development and front-end design."/>
+
         <title>Lucas Marsiske | Front-end Developer & Designer</title>
     </head>
     <body>
-        <!--  -->
+        <!-- This aside makes up the sidebar navigation -->
         <aside>
+            <!-- This div is necessary for a CSS trick related to sizing the image. I'll go more in depth in index.css -->
             <div id="avatar_container">
                 <img id="avatar" src="Vectors/myAvatar.svg" alt="An svg avatar" title="avatar" height="400px" width="400px"/>
             </div>
             <h2>Lucas Marsiske</h2>
             <p>Front-end Developer & Designer</p>
+            <!-- This makes up the actual nav elements -->
             <nav>
-                        <a href="#page2_header">About</a>
-                        <a href="#page3_header">Skills</a>
-                        <a href="#page4_header">Experience</a>
+                <a href="#page2_header">About</a>
+                <a href="#page3_header">Skills</a>
+                <a href="#page4_header">Experience</a>
             </nav>
+            <!-- This contains the supplemental links at the bottom of the aside -->
             <ul>
                 <li>
                     <a href="mailto:lmarsiske@gmail.com" target="_blank" class="section_link">
@@ -43,13 +62,18 @@
                 </li>
             </ul>
         </aside>
+        <!-- Main contains the four sections that make up the necessary "pages" of my single-scroll site -->
         <main>
+            <!-- Page 1 contains my headline and the line-art hero banner -->
             <section id="page1">
+                <!-- Span lets me underline only part of the headline -->
                 <h1 id="headline">I strive to make <span id="underline">beautiful, simple, and effective</span> experiences for the modern web.</h1>
                 <img id="hero" src="Vectors/hero_edited.svg" alt="A multicolored line-art svg of an Apple iPhone, iPad, Macbook, and iMac" title="hero" width="900px" height="366px"/>
             </section>
+            <!-- Page 2 contains a small introduction and "about me" section -->
             <section class="page" id="page2">
                 <h2 class="page_header" id="page2_header">About</h2>
+                <!-- Needed to split the text into 2 separate <p> tags so that I could get paragraph spacing between them -->
                 <p id="first_paragraph">
                     After many years of twists and turns in my career and education - from dropping out of school after my freshman year of college, to spending several years working as a mechanic and a handyman, to finally returning to university as a Dean's list student - my journey in development began with a mandatory internship as part of my undergraduate degree. Before that internship I didn't really like programming and thought I might want to work in security. The focus of my internship was to crash course learning React.js and work with another developer to convert a C# application with an AWS backend to a React web application with a Firebase backend. By the end of that internship I was offered a job and knew I wanted to be a developer for the rest of my life. By the end of my first year, I knew that my real passion was in design and front-end development and I've never looked back since.
                 </p>
@@ -57,8 +81,10 @@
                     As a developer, I try to use my diverse background to inform what I do. I want to make things that work for the people that have to use them, no matter where they're coming from.
                 </p>
             </section>
+            <!-- Page 3 is the most complicated page on the site, breaking down a list of skills and tools I offer.  -->
             <section class="page" id="page3">
                 <h2 class="page_header" id="page3_header">Skills</h2>
+                <!-- The three <div> structure was necessary to achieve the side-by-side columns contained within an outer container. -->
                 <div id="skills_table">
                     <div id="design" class="half_table">
                         <img src="images/design.png" alt="An image of a crossed pencil and ruler" title="design" height="64px" width="64px"/>
@@ -81,7 +107,6 @@
                             </li>
                         </ul>
                     </div>
-                    <div id="divider"></div>
                     <div id="development" class="half_table">
                         <img src="images/web-development.png" alt="An icon of a code bracket in a web browser" title="development" height="64px" width="64px"/>
                         <h3>Development</h3>
@@ -131,8 +156,10 @@
                     </div>
                 </div>
             </section>
+            <!-- PAge 4 discusses my (short) relevant work experience -->
             <section class="page" id="page4">
                 <h2 class="page_header" id="page4_header">Experience</h2>
+                <!-- The 2 <divs> here were necessary to get the effect of keeping the subheader stacked together underneath the main header, while keeping it inline with the image. I tried it some other ways with fewer in <div>s and using floats I just didn't have the precise control over it that I wanted.  -->
                 <div id="container">
                     <div id="text">
                         <h3>The MammaCare Foundation</h3>
@@ -142,6 +169,7 @@
                     </div>
                     <a href="https://learn.mammacare.org/" target="_blank" id="hover_container">
                         <img src="images/learn_screenshot.PNG" alt="An image of the landing page of learn.mammacare.org" title="mammacare" width="500px" height="248px"/>
+                        <!-- This two <div> structure was taken from a W3Schools article linked in one of our course modules to achieve an overlay effect on image hover -->
                         <div id="overlay">
                             <div id="overlay_text">
                                 Visit learn.mammacare.org

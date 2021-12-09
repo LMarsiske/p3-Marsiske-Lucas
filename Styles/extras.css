@@ -1,18 +1,31 @@
+/* Reset rule requirement */
 * {
   margin: 0;
   padding: 0;
   border: 0;
 }
 
+/* Adds smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
+/* 
+  Change background color of whole body to a slightly softer white.
+  Makes sure that body takes up all available width.
+*/
 body {
   background-color: #fffafa;
   width: 100%;
 }
 
+/* 
+  Header gets fixed to top of viewport and always takes up 5% of viewport height.
+  Box shadow for boundary instead of border.
+  Flexbox to vertically center the link back to index.html.
+  Solid background color so page content gets hidden when it gets scrolled over.
+  Horizontal padding to get the link off of the left edge.
+*/
 header {
   height: 5vh;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -25,6 +38,12 @@ header {
   background-color: #fffafa;
 }
 
+/*
+  Footer gets fixed to bottom of viewport and always takes up 5% of viewport height.
+  Box shadow for boundary instead of border.
+  Solid background color so page content gets hidden when it gets scrolled over.
+  Flexbox to horizontally and vertically center the text
+*/
 footer {
   position: fixed;
   left: 0;
@@ -38,31 +57,36 @@ footer {
   background-color: #fffafa;
 }
 
+/* Main takes up all available width and uses viewport padding on top and bottom to make sure no content gets covered by header or footer */
 main {
   width: 100%;
   padding: 5vh 0 10vh 0;
 }
 
+/* Sets font configuration for all <h2> tags */
 h2 {
-  font: normal 400 calc(16px + (36 - 16) * ((100vw - 900px) / (1440 -900)))
-      "Futura PT",
-    sans-serif;
+  font: normal 400 2.25em "Futura PT", sans-serif;
   color: #232b2b;
 }
 
+/* Sets font configuration for all <p> and <a> tags */
 p,
 a {
-  font: normal 400 calc(16px + (24 - 16) * ((100vw - 900px) / (1440 -900)))
-      "Futura PT",
-    sans-serif;
+  font: normal 400 1.5em "Futura PT", sans-serif;
   color: #232b2b;
   text-decoration: none;
 }
 
+/* Puts a little space between the arrow and the text in the link in the header */
 span {
   margin: 0 0 0 10px;
 }
 
+/* 
+  Style applied to all of the sections on the page
+  Border radius and box shadow gives depth effect and visual separation without border.
+  No section will take up more than 40% of available width.
+*/
 .paper {
   margin: 2.5% 0 0 5%;
   width: 40%;
@@ -72,32 +96,36 @@ span {
   padding: 2.5%;
 }
 
+/* Flexbox used to stack the label on top of the input. Margin to add some space between each row.*/
 .form_row {
   display: flex;
   flex-direction: column;
   margin: 1.5% 0;
 }
 
+/* Sets font configuration for form input labels */
 label {
-  font: normal 400 calc(16px + (24 - 16) * ((100vw - 900px) / (1440 -900)))
-      "Futura PT",
-    sans-serif;
+  font: normal 400 1.5em "Futura PT", sans-serif;
   color: #232b2b;
 }
 
+/* Applies a 2px purple border to a form input when it is focused */
 input:focus {
   outline: 2px solid #580dba;
 }
 
+/* Sets the font configuration for the placeholder text in each input */
 input::placeholder {
   font: normal 500 16px "Futura PT", sans-serif;
   color: black;
 }
 
+/* 
+  Styling for the submit button.
+  Margin pushes it down from form, padding increases size of button around text.
+*/
 #submit {
-  font: normal 400 calc(16px + (24 - 16) * ((100vw - 900px) / (1440 -900)))
-      "Futura PT",
-    sans-serif;
+  font: normal 400 1.5em "Futura PT", sans-serif;
   width: fit-content;
   margin: 2% auto;
   padding: 3% 5%;
@@ -106,10 +134,10 @@ input::placeholder {
   background-color: #580dba;
 }
 
-.gallery {
-  width: 250px;
-}
-
+/* 
+  Applies height and width to empty div so it actually takes up some space.
+  Specifices that the colorChange keyframe will be applied infinitely on a 5 second cycle.
+*/
 #animatethis {
   width: 400px;
   height: 400px;
@@ -117,6 +145,7 @@ input::placeholder {
   animation: colorChange 5s infinite;
 }
 
+/* Determines how the color change animation will proceed by specifying what color the background color of the <div> should be at a certain percentage through the animation cycle */
 @keyframes colorChange {
   0% {
     background-color: #580dba;

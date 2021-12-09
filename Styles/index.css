@@ -1,18 +1,25 @@
+/* Reset rule requirement */
 * {
   margin: 0;
   padding: 0;
   border: 0;
 }
 
+/* Adds smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
+/* Change background color of whole body to a slightly softer white */
 body {
   background-color: #fffafa;
-  display: flex;
 }
 
+/* 
+  Fixed the sidebar to the left side and made it occupy 20% of available width with a minimum of 200px.
+  Added a box shadow to right side instead of border.
+  Used flexbox to make it easy to display all the sidebar contents as a column centered in the space
+*/
 aside {
   position: fixed;
   width: 20%;
@@ -24,6 +31,10 @@ aside {
   align-items: center;
 }
 
+/* 
+  Everything related to #avatar_container is based off of this post on stackoverflow https://stackoverflow.com/questions/51447317/image-height-same-as-width.
+  I always want the image to be 50% of sidebar width, 10% top margin, and centered in middle but without extra work, the height doesn't change to match.
+*/
 #avatar_container {
   position: relative;
   width: 50%;
@@ -33,11 +44,11 @@ aside {
 #avatar_container::after {
   content: "";
   display: block;
-  padding-bottom: 100%;
+  padding-bottom: 100%; /* The padding depends on the width, not on the height, so with a padding-bottom of 100% you will get a square */
 }
 
 #avatar_container img {
-  position: absolute;
+  position: absolute; /* Take your picture out of the flow */
   top: 0;
   bottom: 0;
   left: 0;
@@ -48,24 +59,29 @@ aside {
   object-position: center;
 }
 
+/* 
+  I text-aligned both the <h2> and the <p> in case the sidebar gets small enough that the text kicks to two lines.
+  Changed both of their fonts and colors from default and added top margins to space things out.
+*/
 aside h2 {
-  font: normal 400 calc(16px + (36 - 16) * ((100vw - 900px) / (1440 -900)))
-      "Futura PT",
-    sans-serif;
+  font: normal 2.25em "Futura PT", sans-serif;
   color: #232b2b;
   margin: 5% 0 0 0;
   text-align: center;
 }
 
 aside p {
-  font: normal 400 calc(12px + (24 - 12) * ((100vw - 900px) / (1440 -900)))
-      "Futura PT",
-    sans-serif;
+  font: normal 400 1.5em "Futura PT", sans-serif;
   color: #232b2b;
   margin: 2% 0 0 0;
   text-align: center;
 }
 
+/* 
+  Wanted nav to be half of available width and always 20% of viewport height, but contents left-aligned within the nav.
+  Using flexbox with space-between is a short way of making the nav contents take the max available space between elments within the container.
+  Added top margin to space away from preceding elements
+*/
 aside nav {
   width: 50%;
   height: 20vh;
@@ -75,16 +91,21 @@ aside nav {
   margin: 30% 0 0 0;
 }
 
+/* 
+  Changed nav link font and color.
+  Applied a hover effect from this site http://ianlunn.github.io/Hover/, specifically "Underline From Left". I got the code necessary to make it work from looking through the github repo and searching for the keywords in the master css file.
+*/
 aside nav a {
-  font: normal 400 calc(12px + (24 - 12) * ((100vw - 900px) / (1440 -900)))
-      "Futura PT",
-    sans-serif;
+  font: normal 400 1.5em "Futura PT", sans-serif;
   color: #232b2b;
   text-decoration: none;
   position: relative;
   transform: perspective(1px) translateZ(0);
 }
 
+/* 
+  This hides a 2px tall, 0 width line at the bottom left of the link, hidden behind the link
+*/
 aside nav a:before {
   content: "";
   position: absolute;
@@ -102,43 +123,54 @@ aside nav a:before {
   transition-timing-function: ease-out;
 }
 
+/* 
+  When the link is hovered, focused, or active, the hidden line grows to the width of the covering element
+*/
 aside nav a:hover:before,
 aside nav a:focus:before,
 aside nav a:active:before {
   right: 0;
 }
 
+/* Removes the list style from the unordered list */
 aside ul {
   list-style: none;
   margin: 50% 0 0 0;
 }
 
+/* Removes any link styling from the supplementary links in the sidebar */
 aside ul a {
   text-decoration: none;
 }
 
+/* Flexbox makes it easy to display elements side-by-side and vertically center them with one another */
 .section_link {
   display: flex;
   margin: 7% 0;
   align-items: center;
 }
 
+/* Changed the font of the supplementary links and a little space between them and their matching icon */
 .section_link p {
-  font: normal 400 calc(10px + (20 - 10) * ((100vw - 900px) / (1440 -900)))
-      "Futura PT",
-    sans-serif;
+  font: normal 400 1.125em "Futura PT", sans-serif;
   color: #232b2b;
   text-decoration: none;
   margin: 0 0 0 8px;
 }
 
+/*
+  Main will always take up the 80% of the body that the sidebar doesn't.
+  The 20% left margin is needed because setting the aside to position:fixed takes it out of the flow. The margin makes main pretend that the aside actually takes up space when it doesn't so they don't overlap.
+*/
 main {
   width: 80%;
   margin: 0 0 0 20%;
-  display: flex;
-  flex-direction: column;
 }
 
+/* 
+  I wanted the first page to fill the rest of the screen when the site loads. 100% width means it will fill the body horizontally while 100vh height means that it will always be as tall as the viewport on load so that I can place the hero image right at the bottom.
+  Flexbox lets me center things very easily so I will always default to it.
+*/
 #page1 {
   width: 100%;
   height: 100vh;
@@ -147,89 +179,102 @@ main {
   align-items: center;
 }
 
+/* 
+  Change headline font anmd make sure that headline will always take up 2/3 available width of the section.
+  Margin keeps it off the top of the screen.
+*/
 #headline {
-  font: normal 600 calc(36px + (48 - 36) * ((100vw - 900px) / (1440 -900)))
-      "Futura PT",
-    sans-serif;
+  font: normal 600 3em "Futura PT", sans-serif;
   width: 67%;
   text-align: center;
-  margin: 200px auto;
+  margin: 200px 0;
   color: #232b2b;
 }
 
+/* Selectively underlines only a portion of the text */
 #underline {
   border-bottom: 3px solid #580dba;
-  line-height: 44px;
 }
 
+/* Ensure that the hero image is always at the bottom of the screen, centered in the section when you are scrolled all the way up to the top */
 #hero {
   position: absolute;
   bottom: 0;
 }
 
+/* All remaining pages will have a uniform 100px of padding on all sides */
 .page {
   padding: 100px;
 }
 
+/* All <p> tags in remaining pages will be this same font configuration by default */
 .page p {
-  font: normal 400 calc(16px + (24 - 16) * ((100vw - 900px) / (1440 -900)))
-    "Futura PT";
+  font: normal 400 1.5em "Futura PT";
+  color: #232b2b;
 }
 
+/* All page header <h2> tags in remaining pages will be this same font configuration by default */
 .page_header {
-  font: normal 500 calc(36px + (48 - 36) * ((100vw - 900px) / (1440 -900)))
-      "Futura PT",
-    sans-serif;
+  font: normal 500 3em "Futura PT", sans-serif;
   color: #fffafa;
 }
 
+/* 
+  I use a gradient with a sharp line in it to color from the top of each section all the way to common distance past the section header.
+  The color changes with each section. 
+*/
 #page2 {
   background: #580dba;
-  background: linear-gradient(180deg, #580dba 25%, #fffafa 25%);
+  background: linear-gradient(180deg, #580dba 23%, #fffafa 23%);
 }
 
+/* I want the right edge of the <p> tags in this section to fall on the line marking 70% of available width from the left, so I have to account to the padding using calc() */
 #page2 p {
   width: calc(70% - 100px);
 }
 
+/* I want the first <p> to be 50px down from the header */
 #page2 #first_paragraph {
   margin: 50px 0 0 0;
 }
 
+/* And I want the second <p> tag to be 25px down from the first */
 #page2 #second_paragraph {
   margin: 25px 0 0 0;
 }
 
+/* Same gradient trick in the next section, just in pink this time */
 #page3 {
   background: #f7567c;
   background: linear-gradient(180deg, #f7567c 13%, #fffafa 13%);
 }
 
+/* 
+  I want a div with rounded corners to take up 2/3 of available section width and sit on center.
+  I like flexbox to display the "columns" side by side.
+*/
 #skills_table {
   width: 67%;
   border: 3px solid #232b2b;
   border-radius: 25px;
   margin: 50px auto 0 auto;
   display: flex;
-  justify-content: space-between;
 }
 
+/* Sets the default font configurations for <h3> and pushes them down from the icons*/
 #skills_table h3 {
-  font: normal 500 calc(24px + (36 - 24) * ((100vw - 900px) / (1440 -900)))
-      "Futura PT",
-    sans-serif;
+  font: normal 500 2.25em "Futura PT", sans-serif;
   color: #232b2b;
+  margin: 10px 0 0 0;
 }
 
-#skills_table p {
-  font: normal 400 calc(16px + (24 - 16) * ((100vw - 900px) / (1440 -900)))
-      "Futura PT",
-    sans-serif;
-  color: #232b2b;
-}
-
+/* 
+  Each half of the "table" will take up half of the parent width.
+  Flexbox again to display things as a centered column.
+  Padding to keep things away from the border of the box.
+*/
 .half_table {
-  width: 48%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -237,49 +282,47 @@ main {
   padding: 40px 10px;
 }
 
+/* Making the subheader much wider than text and then centering the contents lets me use a bottom border to create the effect of a very wide underline, stylistically breaks up the flow */
 .table_subheader {
   width: 80%;
   text-align: center;
-  font: normal 500 calc(20px + (30 - 20) * ((100vw - 900px) / (1440 -900)))
-      "Futura PT",
-    sans-serif;
+  font: normal 500 1.875em "Futura PT", sans-serif;
   border-bottom: 1px solid #f7567c;
+  margin: 40px 0 0 0;
 }
 
-.half_table h3 {
-  margin: 10px 0 0 0;
-}
-
+/* Removes any list styling from the lists in the "table" */
 .half_table ul {
   list-style-type: none;
 }
 
+/* Sets the font configuration for the list items in the "table" and gets some space in between them */
 .half_table li {
-  font: normal 400 calc(16px + (24 - 16) * ((100vw - 900px) / (1440 -900)))
-      "Futura PT",
-    sans-serif;
+  font: normal 400 1.5em "Futura PT", sans-serif;
   color: #232b2b;
   margin: 20px 0;
 }
 
+/* 
+  <p> tag in the #design half takes up 80% of width to match the pink underlines.
+  Top and bottom margins were used to make the top line up with "Languages" next to it and to make the two "Tools" subheaders line up with each other
+*/
 #design p {
   width: 80%;
-  margin: 40px 0 32px 0;
+  margin: 48px 0 20px 0;
 }
 
-#design .table_subheader {
-  margin: 40px 0 0 0;
-}
-
-#development .table_subheader {
-  margin: 40px 0 0 0;
-}
-
+/* Last time with the gradient trick, this time in navy */
 #page4 {
   background: #1c3a6b;
   background: linear-gradient(180deg, #1c3a6b 27%, #fffafa 27%);
 }
 
+/*
+  Wanted the sub-header and <p> tag to be stacked vertically with the image next to them inline. 
+  The two parts are different heights so I used to flex to align them along the bottom edge of the parent.
+  Margin moves everything down from the section header
+*/
 #container {
   display: flex;
   align-items: flex-end;
@@ -287,30 +330,31 @@ main {
   margin: 50px 0 0 0;
 }
 
+/* Wanted the text portion to fall on the 50% available width line, so used calc() to account for the padding */
 #text {
   width: calc(50% - 100px);
 }
 
+/* Sets the font configuration for the final page's subheader */
 #text h3 {
-  font: normal 500 calc(20px + (30 - 20) * ((100vw - 900px) / (1440 -900)))
-      "Futura PT",
-    sans-serif;
+  font: normal 500 1.875em "Futura PT", sans-serif;
   color: #232b2b;
 }
 
+/* Pushes the main text 25px down and in from the subheader */
 #text p {
-  font: normal 400 calc(16px + (24 - 16) * ((100vw - 900px) / (1440 -900)))
-      "Futura PT",
-    sans-serif;
-  color: #232b2b;
   margin: 25px 0 0 25px;
 }
 
+/* Centers the image in the remaining horizontal space and positions it relatively in preparation for the hover overlay */
 #hover_container {
   margin: 0 auto;
   position: relative;
 }
-
+/*
+  Gives the image a border radius and a box-shadow for depth effect.
+  Display:block comes from this tutorial https://www.w3schools.com/howto/howto_css_image_overlay.asp for creating an image overlay on hover
+*/
 #page4 img {
   border-radius: 15px;
   box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -318,6 +362,10 @@ main {
   width: 100%;
 }
 
+/* 
+  this code also comes mostly from here https://www.w3schools.com/howto/howto_css_image_overlay.asp.
+  Transparent div sits on top of image and matches the dimensions. Added border radius so that the overlay keeps the same shape as the image when it is visible
+*/
 #overlay {
   position: absolute;
   top: 0;
@@ -331,16 +379,15 @@ main {
   background-color: #000;
   border-radius: 15px;
 }
-
+/* Overlay goes from transparent to mostly opaque when the outermost container picks up the hover event */
 #hover_container:hover #overlay {
   opacity: 0.85;
 }
 
+/* Centers the text inside of the overlay when it is visible */
 #overlay_text {
   color: #fffafa;
-  font: normal 400 calc(24px + (36 - 24) * ((100vw - 900px) / (1440 -900)))
-      "Futura PT",
-    sans-serif;
+  font: normal 400 2.25em "Futura PT", sans-serif;
   position: absolute;
   top: 50%;
   left: 50%;

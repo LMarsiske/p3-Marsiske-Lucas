@@ -5,8 +5,7 @@
 
     #home {
         text-decoration: none;
-        font: 24px "Georama", sans-serif;
-        color: #f87839;
+        font: 24px "Futura PT", sans-serif;
     }
 
     h1 {
@@ -21,7 +20,7 @@
     <nav>
         <ul>
             <li>
-                <a href="index.html" id="home">&#129044; Return to home</a>
+            <a href="extras.html" id="home">&#129044; Return to extras</a>
             </li>
         </ul>
     </nav>
